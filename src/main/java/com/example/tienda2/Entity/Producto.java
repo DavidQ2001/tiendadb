@@ -51,4 +51,9 @@ public class Producto implements Serializable {
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
+
+    @PrePersist
+    public void prePersit(){
+        this.fechaCreacion = new Date();
+    }
 }
